@@ -1,0 +1,13 @@
+language: python
+python:
+- '2.7'
+script: echo ok
+deploy:
+  provider: pypi
+  user: xiachufang
+  password:
+    secure: rR6frWdvgoQrDO2OXuZvDK2JYdg8YOGJ00aHObBPLm4yHcQob7Eqx5KBGUjOPTUt1vFCyFkGuUQtdLqLb5qScGV/c3J6v7poUm4D0S0NRaevilNjGiiAS1KFyFaXWAzQ+XEWcEat6NOhbRPSOAgI36iMWfPY8MxbsYpO4twSJnMQkIXyy8eSohxQkD9oCht/BJOSQID5C/McBUzv1h6yS/pGRMZpqsd0Ea/pAqb02QqfhhSd2nrFcbz/7i4LvslguEcQWh2dJuwkg/RPO9lM3U+PoDq8vuVErD8S1vmalb4yIBaPvebzmGk7feCBqcfN9u0D8cUfyQmtOH1X+cF8h/9oH0L5evdi1tRJak5Zm7Uwlgbfwp577xYT3s4BNUhpTMcg8ZS3RTeBb4ktCq1GfQQiLChFW1BQ7LGuItqxPNLZgS5yxucxabeyLKyhHlAbVOJt3HaQ5ypF8PRjip1vZPnRwhjiUOalXHQ5O+6tIXyruGIFtEiLkqSyr0UF088IzQxpN38n39tqULpn3p2UXcADlKHn7r0M/sh6IvVDGDszYx6gcd3YKTuw+SOUp95QjaAZLgFDvuEzbvOO0fEVLrYj84RpQG1UyFWO1fAaXeZSPr5YIwWSeCZIE1W2DNlDpt0/tVEGnZCR8S4E2s3svBCBfUcFJey+B02S1P+Nl/k=
+  on:
+    #tags: true
+    distributions: sdist bdist_wheel
+    repo: xiachufang/s3-log
