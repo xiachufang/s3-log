@@ -16,6 +16,7 @@ class S3Log(object):
         if len(splited) < 6:
             return
         s = cls()
+        s.raw = row
         s.time = datetime.datetime.strptime(splited[0].split("+")[0], "%Y-%m-%dT%H:%M:%S.%f")
         s.ip = splited[1]
         s.label = splited[3]
