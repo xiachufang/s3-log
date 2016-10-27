@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xiachufang/s3-log.svg)](https://travis-ci.org/xiachufang/s3-log)
+
 ## Sample
 
 ```python
