@@ -3,9 +3,15 @@
 import boto3
 import botocore
 import datetime
-import warnings
+import logging
 
 from pytz import timezone
+
+
+logger = logging.getLogger("s3-log")
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter('%(levelname)s:%(name)s:%(message)s'))
+logger.addHandler(handler)
 
 
 class S3Log(object):
@@ -37,7 +43,7 @@ def get_key_list(client, bucket, prefix, time_begin):
     tz = timezone('Asia/Shanghai')
     resp = client.list_objects(Bucket=bucket, Prefix=prefix)
     if "Contents" not in resp:
-        warnings.warn("%s not found" % prefix)
+        logger.warning("%s not found" % prefix)
         return
 
     for obj in resp["Contents"]:
