@@ -3,7 +3,7 @@
 import boto3
 import botocore
 import datetime
-import warnings
+import logging
 
 from pytz import timezone
 
@@ -36,7 +36,7 @@ def get_key_list(client, bucket, prefix, time_begin):
     tz = timezone('Asia/Shanghai')
     resp = client.list_objects(Bucket=bucket, Prefix=prefix)
     if "Contents" not in resp:
-        warnings.warn("%s not found" % prefix)
+        logging.warning("%s not found" % prefix)
         return
 
     for obj in resp["Contents"]:
